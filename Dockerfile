@@ -30,4 +30,7 @@ RUN chown -R www-data:www-data /var/www \
 EXPOSE 8000
 
 # Start Laravel
-CMD php artisan serve --host=0.0.0.0 --port=8000
+CMD chmod -R 775 storage bootstrap/cache && \
+    chown -R www-data:www-data storage bootstrap/cache && \
+    php artisan migrate --force && \
+    php artisan serve --host=0.0.0.0 --port=8000
