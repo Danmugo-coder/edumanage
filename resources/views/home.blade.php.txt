@@ -1,0 +1,2 @@
+<h1>Welcome to EduManage!</h1>
+<p>This is your own homepage.</p>
